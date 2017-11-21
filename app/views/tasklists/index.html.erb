@@ -1,7 +1,7 @@
 <h1>メッセージ一覧</h1>
 <ul>
   <% @tasklists.each do |tasklist| %>
-   <li><% link_to tasklist.id, tasklist %> : <%= tasklist.content %></li>
+   <li><% link_to tasklist.id, tasklist %> :  <%= tasklist.status %> &gt; <%= tasklist.content %></li>
   <% end %>
 </ul>
 

@@ -1,5 +1,18 @@
 <%= form_for(tasklist) do |f| %>
-  <%= f.label :content, 'タスク %>
+  <% if tasklist.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% tasklist.errors.full_tasklists.each do |tasklist| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <%= f.label :status, 'タイトル' %>
+  <%= f.text_field :status%>
+  <%= f.label :content, 'メッセージ' %>
   <%= f.text_field :content %>
 
   <%= f.submit '投稿' %>
