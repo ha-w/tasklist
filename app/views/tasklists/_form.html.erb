@@ -4,7 +4,7 @@
   <% if tasklist.errors.any? %>
     <div class="alert alert-warning">
       <ul>
-        <% tasklist.errors.full_tasklists.each do |tasklist| %>
+        <% tasklist.errors.full_messages.each do |tasklist| %>
           <li><%= tasklist %></li>
         <% end %>
       </ul>
