@@ -8,3 +8,30 @@
 
 
 <%= link_to '新規メッセージの投稿', new_tasklist_path %>
+<h1>タスクリスト一覧</h1>
+
+<% if @tasklists.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>ステイタス</th>
+        <th>タスク</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tasklists.each do |tasklist| %>
+        <tr>
+          <td><%= link_to tasklist.id, tasklist %></td>
+          <td><%= tasklist.status %></td>
+          <td><%= tasklist.content %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @tasklists %>
+  </div>
+<% end %>
+
+<%= link_to '新規タイトルの投稿', new_tasklist_path, class: "btn btn-primary" %>
