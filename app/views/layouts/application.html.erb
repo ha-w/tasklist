@@ -15,7 +15,10 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
+     <div class="container">
     <%= render 'layouts/flash_tasklists' %>
     <%= yield %>
+    </div>
   </body>
 </html>

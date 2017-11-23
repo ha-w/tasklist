@@ -1,15 +1,5 @@
 <h1>タスクリスト一覧</h1>
 
-<ul>
-  <% @tasklists.each do |tasklist| %>
-   <li><%= link_to tasklist.id, tasklist %> :  <%= tasklist.status %> &gt; <%= tasklist.content %></li>
-  <% end %>
-</ul>
-
-
-<%= link_to '新規メッセージの投稿', new_tasklist_path %>
-<h1>タスクリスト一覧</h1>
-
 <% if @tasklists.any? %>
   <table class="table table-striped">
     <thead>
@@ -34,4 +24,4 @@
   </div>
 <% end %>
 
-<%= link_to '新規タイトルの投稿', new_tasklist_path, class: "btn btn-primary" %>
+<%= link_to '新規タスクの投稿', new_tasklist_path, class: "btn btn-primary" %>
